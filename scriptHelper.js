@@ -27,10 +27,8 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === "Empty"){
-       alert("All Fields Are Required!")
    }
-}
+
 
 async function myFetch() {
     let planetsReturned;
