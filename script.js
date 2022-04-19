@@ -1,10 +1,55 @@
 // Write your JavaScript code here!
 
-// window.addEventListener("load", function() {
+window.addEventListener("load", function() {
+    //  fetch our planet JSON data
+    function pickPlanet(planets){
+
+    }
+
+    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+        response.json().then(function(json){
+            console.log(json)
+            let missionTarget = document.getElementById('missionTarget');
+            let randomNumber = Math.floor(Math.random() * json.length)
+            let planet = json[randomNumber]
+            missionTarget.innerHTML = `
+                <h2>Mission Destination</h2>
+                <ol>
+                    <li>Name: ${planet.name} </li>
+                    <li>Diameter: ${planet.diameter}</li>
+                    <li>Star: ${planet.star}</li>
+                    <li>Distance from Earth:${planet.distance} </li>
+                    <li>Number of Moons:${planet.moons} </li>
+                </ol>
+                <img src="${planet.image}">
+            `
+
+
+            /*
+                <h2>Mission Destination</h2>
+                <ol>
+                    <li>Name: </li>
+                    <li>Diameter: </li>
+                    <li>Star: ${star}</li>
+                    <li>Distance from Earth: </li>
+                    <li>Number of Moons: </li>
+                </ol>
+                <img src="">
+   */
+
+
+            // we need to write the erst of code this is the only scope
+            // in which we have acess to our json array
+            // select a random planet object from json
+            // display the random planets data type in missionTarget
+        })
+    })
 
 //    let listedPlanets;
 //    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-//    let listedPlanetsResponse;
+//    let listedPlanetsResponse = fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+        // response.json().then(function(json){
+        //     console.log(json);
 //    listedPlanetsResponse.then(function (result) {
 //        listedPlanets = result;
 //        console.log(listedPlanets);
@@ -13,7 +58,7 @@
 //        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 //    })
    
-// });
+});
 
 window.addEventListener('load', function(){
     let form = document.querySelector('form')
